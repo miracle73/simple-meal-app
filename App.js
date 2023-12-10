@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import MealsOverviewScreen from './screens/MealsOverviewScreen';
 import MealDetailScreen from './screens/MealDetailScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import DrawerNavigation from './navigation/DrawerNavigation';
 
 const Drawer = createDrawerNavigator()
 const Stack = createNativeStackNavigator();
@@ -21,6 +22,14 @@ export default function App() {
             backgroundColor: "#3f2f25"
           }
         }}>
+           <Stack.Screen name="The Drawer"
+            component={DrawerNavigation}
+            options={{
+              title: "Some Screens",
+              headerShown: false,
+
+            }}
+          />
           <Stack.Screen name="MealsCategories"
             component={CategoriesScreen}
             options={{
